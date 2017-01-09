@@ -166,7 +166,7 @@ public class BurpExtender implements IBurpExtender, IMessageEditorTabFactory, IC
             String request = helpers.bytesToString(message.getRequest());
 
             String tainterId = Tainter.nextId();
-            tainter.put(tainterId, message.getUrl());
+            tainter.put(tainterId, helpers.analyzeRequest(message).getUrl());
 
             if (bounds[0] == bounds[1])
                 request = new StringBuilder(request).insert(bounds[0], tainterId).toString();

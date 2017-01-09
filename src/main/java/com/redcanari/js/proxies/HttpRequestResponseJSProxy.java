@@ -82,44 +82,4 @@ public class HttpRequestResponseJSProxy extends JSProxy implements IHttpRequestR
     public void setHttpService(IHttpService httpService) {
         call("setHttpService", httpService);
     }
-
-    @Override
-    public String getHost() {
-        return call("getHost");
-    }
-
-    @Override
-    public int getPort() {
-        return call("getPort");
-    }
-
-    @Override
-    public String getProtocol() {
-        return call("getProtocol");
-    }
-
-    @Override
-    public void setHost(String s) {
-        call("setHost", s);
-    }
-
-    @Override
-    public void setPort(int i) {
-        call("setPort", i);
-    }
-
-    @Override
-    public void setProtocol(String s) {
-        call("setProtocol", s);
-    }
-
-    @Override
-    public URL getUrl() {
-        return call("getUrl");
-    }
-
-    @Override
-    public short getStatusCode() {
-        return call("getShortCode");
-    }
 }

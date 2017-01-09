@@ -126,6 +126,7 @@ var scannerCheck = burpCallbacks.registerScannerCheck({
             // Make sure the cookie name starts with BIGipServer
             if (cookieName.toLowerCase().indexOf("bigipserver") == 0) {
                 issues.push(new F5PassiveScanIssue(
+                    helpers.analyzeRequest(baseRequestResponse).getUrl(),
                     baseRequestResponse,
                     cookieName,
                     cookieValue,
@@ -156,11 +157,11 @@ var scannerCheck = burpCallbacks.registerScannerCheck({
 
 // This is our `IScanIssue` class which will be used to hold scan
 // issue information. We follow the same interface as `IScanIssue`.
-function F5PassiveScanIssue(baseRequestResponse, cookieName,
+function F5PassiveScanIssue(url, baseRequestResponse, cookieName,
                             cookieValue, decodedCookie) {
     this.httpService = baseRequestResponse.getHttpService();
     this.messages = [baseRequestResponse];
-    this.url = baseRequestResponse.getUrl();
+    this.url = url;
     this.cookieName = cookieName;
     this.cookieValue = cookieValue;
     this.address = decodedCookie.address;

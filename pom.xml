@@ -42,7 +42,7 @@
         <dependency>
             <groupId>burp</groupId>
             <artifactId>burpExtender</artifactId>
-            <version>1.6.09</version>
+            <version>1.7.15</version>
             <scope>provided</scope>
         </dependency>
         <dependency>

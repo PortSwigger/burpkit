@@ -49,11 +49,11 @@ var httpListener = {
         
         if (isRequest) { 
             var request = httplib.parseRequest(this.helpers.bytesToString(messageInfo.getRequest()));
-            alert(burpCallbacks.getToolName(toolFlag) + " >> " + request.method + " " + messageInfo.getUrl().toString());
+            alert(burpCallbacks.getToolName(toolFlag) + " >> " + request.method + " " + this.helpers.analyzeRequest(messageInfo).getUrl().toString());
         }
         else {            
             var response = httplib.parseResponse(this.helpers.bytesToString(messageInfo.getResponse()));
-            alert(burpCallbacks.getToolName(toolFlag) + " << " + response.statusCode + " " + response.statusMessage + " (" + messageInfo.getUrl().toString() + ")");
+            alert(burpCallbacks.getToolName(toolFlag) + " << " + response.statusCode + " " + response.statusMessage + " (" + this.helpers.analyzeRequest(messageInfo).getUrl().toString() + ")");
         }
     }
 };

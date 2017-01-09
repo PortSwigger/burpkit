@@ -95,19 +95,4 @@ public class ScanIssueJSProxy extends JSProxy implements IScanIssue {
     public IHttpService getHttpService() {
         return Helpers.<IHttpService>wrapInterface(call("getHttpService"), HttpServiceJSProxy.class);
     }
-
-    @Override
-    public String getHost() {
-        return call("getHost");
-    }
-
-    @Override
-    public int getPort() {
-        return call("getPort");
-    }
-
-    @Override
-    public String getProtocol() {
-        return call("getProtocol");
-    }
 }
