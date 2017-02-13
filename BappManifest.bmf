@@ -1,6 +1,7 @@
 Uuid: 720aae316d8340ebbc56230e6527b3e3
 ExtensionType: 1
 Name: BurpKit
+RepoName: burpkit
 ScreenVersion: 0.1
 SerialVersion: 1
 MinPlatformVersion: 0
